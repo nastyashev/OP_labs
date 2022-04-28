@@ -53,11 +53,12 @@ void inputFile(string filename)
 		timetable train;
 		
 		for (int i = 0; i < num; i++) {
-			cout << "Route number: "; cin >> train.number;
+			cout << "Input " << i + 1 << " route." << endl;
 			
-			cout << "Route: ";
-			string way;
-			getline(cin, way); train.way = way; //need fix (program ignore getline)
+			cout << "Route number: "; cin >> train.number;
+
+			cin.get();
+			cout << "Route: "; cin.getline(train.way, LEN_STR);
 			
 			cout << "Departure time: ";
 			cin >> train.departure_h; cin.get(); cin >> train.departure_m;
