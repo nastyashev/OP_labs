@@ -16,7 +16,7 @@ int main()
     	inputArr(textArr);
 
 	int ind = getIndexLeastDigitPercent(textArr);
-	cout << "\nText with the least percentage of digits:";
+	cout << "\nText with the least percentage of digits:" << endl;
 	textArr[ind].outputText();
 	cout << "\npercentage of digits s: " << setw(3) << setprecision(3) << textArr[ind].digitPercent() << "%" << endl;
     
