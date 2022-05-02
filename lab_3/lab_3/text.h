@@ -1,20 +1,21 @@
 #pragma once
 #include <iostream>
-#include <windows.h>
 #include <string>
 #include <vector>
+#include <iomanip>
+#include <windows.h>
 using namespace std;
 
 class text
 {
 private:
-	vector<string> lines;
-	int sizeText;
+	vector<wstring> lines;
+	int sizeText = 0;
 public:
 	void inputText();
 	void outputText();
 	double digitPercent();
-	int GetSizeText();
 };
 
-void inputArr(vector<text>);
+void inputArr(vector<text>&);
+int getIndexLeastDigitPercent(vector<text>&);

@@ -9,11 +9,16 @@
 
 int main()
 {
-    setlocale(LC_ALL, ""); SetConsoleCP(1251); SetConsoleOutputCP(1251);
-
-    vector<text> textArr;
-    
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	
+	vector<text> textArr;
     inputArr(textArr);
+
+	int ind = getIndexLeastDigitPercent(textArr);
+	cout << "\nText with the least percentage of digits:";
+	textArr[ind].outputText();
+	cout << "\npercentage of digits s: " << setw(3) << setprecision(3) << textArr[ind].digitPercent() << "%" << endl;
     
     return 0;
 }
