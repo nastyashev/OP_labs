@@ -33,9 +33,9 @@ int main()
     double number; cin >> number;
 
     cout << "\n------Original triangles------" << endl;
-    cout << "T1: " << endl; T1.outputTriangle();
-    cout << "T2: " << endl; T2.outputTriangle();
-    cout << "T3: " << endl; T3.outputTriangle();
+    cout << "T1: " << endl; outputTriangle(T1);
+    cout << "T2: " << endl; outputTriangle(T2);
+    cout << "T3: " << endl; outputTriangle(T3);
     cout << "------------------------------" << endl;
 
     ++T1;
@@ -43,9 +43,9 @@ int main()
     T3 += number;
 
     cout << "\n-------Changed triangles-------" << endl;
-    cout << "T1: " << endl; T1.outputTriangle();
-    cout << "T2: " << endl; T2.outputTriangle();
-    cout << "T3: " << endl; T3.outputTriangle();
+    cout << "T1: " << endl; outputTriangle(T1);
+    cout << "T2: " << endl; outputTriangle(T2);
+    cout << "T3: " << endl; outputTriangle(T3);
     cout << "-------------------------------" << endl;
 
     largestPerimetr(T1, T2, T3);

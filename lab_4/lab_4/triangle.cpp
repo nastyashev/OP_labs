@@ -106,16 +106,6 @@ double triangle::perimetr()
 	return P;
 }
 
-void triangle::outputTriangle()
-{
-	cout << "First vertex:" << endl;
-	cout << "x = " << firstVertex[0] << "\ty = " << firstVertex[1] << "\tz = " << firstVertex[2] << endl;
-	cout << "Second vertex:" << endl;
-	cout << "x = " << secondVertex[0] << "\ty = " << secondVertex[1] << "\tz = " << secondVertex[2] << endl;
-	cout << "Third vertex:" << endl;
-	cout << "x = " << thirdVertex[0] << "\ty = " << thirdVertex[1] << "\tz = " << thirdVertex[2] << endl;
-}
-
 //functions
 
 vector<double> inputVertex()
@@ -145,6 +135,20 @@ void largestPerimetr(triangle T1, triangle T2, triangle T3)
 		cout << "T2 has the largest perimetr: " << P2 << endl;
 	}
 	else {
-		cout << "T31 has the largest perimetr: " << P3 << endl;
+		cout << "T3 has the largest perimetr: " << P3 << endl;
 	}
+}
+
+void outputTriangle(triangle Triangle)
+{
+	vector<double> firstVertex = Triangle.getFirstVertex();
+	vector<double> secondVertex = Triangle.getSecondVertex();
+	vector<double> thirdVertex = Triangle.getThirdVertex();
+	
+	cout << "First vertex:" << endl;
+	cout << "x = " << firstVertex[0] << "\ty = " << firstVertex[1] << "\tz = " << firstVertex[2] << endl;
+	cout << "Second vertex:" << endl;
+	cout << "x = " << secondVertex[0] << "\ty = " << secondVertex[1] << "\tz = " << secondVertex[2] << endl;
+	cout << "Third vertex:" << endl;
+	cout << "x = " << thirdVertex[0] << "\ty = " << thirdVertex[1] << "\tz = " << thirdVertex[2] << endl;
 }

@@ -25,8 +25,8 @@ public:
 	triangle& operator +=(double);
 
 	double perimetr();
-	void outputTriangle();
 };
 
 vector<double> inputVertex();
 void largestPerimetr(triangle, triangle, triangle);
+void outputTriangle(triangle);
