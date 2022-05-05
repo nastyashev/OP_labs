@@ -16,6 +16,10 @@ struct timetable
 	int arrival_m;
 };
 
+char fileMode();
+void checkTime(int&, int&);
+int numOfRoutes();
 void inputFile(string);
+void printTime(int);
 void outputFile(string);
 void makeNewFile(string, string);
