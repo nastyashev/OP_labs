@@ -11,42 +11,43 @@
 */
 
 #include "triangle.h"
+#include "point.h"
 
 int main()
 {
     triangle T1;
     
-    cout << "Enter the vertices of triangle T2." << endl;
-    cout << "Enter first vertex:" << endl;
-    vector<double> vertex1 = inputVertex();
-    cout << "Enter second vertex:" << endl;
-    vector<double> vertex2 = inputVertex();
-    cout << "Enter third vertex:" << endl;
-    vector<double> vertex3 = inputVertex();
+    std::cout << "Enter the vertices of triangle T2." << std::endl;
+    std::cout << "Enter first vertex:" << std::endl;
+    point vertex1; vertex1.inputPoint();
+    std::cout << "Enter second vertex:" << std::endl;
+    point vertex2; vertex2.inputPoint();
+    std::cout << "Enter third vertex:" << std::endl;
+    point vertex3; vertex3.inputPoint();
     triangle T2(vertex1, vertex2, vertex3);
 
-    cout << "Enter first vertex of triangle T3:" << endl;
-    vector<double> vertexT3 = inputVertex();
+    std::cout << "Enter first vertex of triangle T3:" << std::endl;
+    point vertexT3; vertexT3.inputPoint();
     triangle T3(vertexT3);
 
-    cout << "number = ";
-    double number; cin >> number;
+    std::cout << "number = ";
+    double number; std::cin >> number;
 
-    cout << "\n------Original triangles------" << endl;
-    cout << "T1: " << endl; outputTriangle(T1);
-    cout << "T2: " << endl; outputTriangle(T2);
-    cout << "T3: " << endl; outputTriangle(T3);
-    cout << "------------------------------" << endl;
+    std::cout << "\n------Original triangles------" << std::endl;
+    std::cout << "T1: " << std::endl; outputTriangle(T1);
+    std::cout << "T2: " << std::endl; outputTriangle(T2);
+    std::cout << "T3: " << std::endl; outputTriangle(T3);
+    std::cout << "------------------------------" << std::endl;
 
     ++T1;
     T2++;
     T3 += number;
 
-    cout << "\n-------Changed triangles-------" << endl;
-    cout << "T1: " << endl; outputTriangle(T1);
-    cout << "T2: " << endl; outputTriangle(T2);
-    cout << "T3: " << endl; outputTriangle(T3);
-    cout << "-------------------------------" << endl;
+    std::cout << "\n-------Changed triangles-------" << std::endl;
+    std::cout << "T1: " << std::endl; outputTriangle(T1);
+    std::cout << "T2: " << std:: endl; outputTriangle(T2);
+    std::cout << "T3: " << std::endl; outputTriangle(T3);
+    std::cout << "-------------------------------" << std::endl;
 
     largestPerimetr(T1, T2, T3);
     

@@ -1,15 +1,24 @@
 #include "triangle.h"
+#include "point.h"
 
 //class constructors
 
 triangle::triangle()
 {
-	firstVertex = { 0, 0, 0 };
-	secondVertex = { 1, 1, 1 };
-	thirdVertex = { 2, 2, 2 };
+	firstVertex.setX(0);
+	firstVertex.setY(0);
+	firstVertex.setZ(0);
+
+	secondVertex.setX(1);
+	secondVertex.setY(1);
+	secondVertex.setZ(1);
+
+	thirdVertex.setX(2);
+	thirdVertex.setY(2);
+	thirdVertex.setZ(2);
 }
 
-triangle::triangle(vector<double>& firstVertex, vector<double>& secondVertex, vector<double>& thirdVertex)
+triangle::triangle(point firstVertex, point secondVertex, point thirdVertex)
 {
 	this->firstVertex = firstVertex;
 	this->secondVertex = secondVertex;
@@ -23,62 +32,48 @@ triangle::triangle(const triangle &T)
 	this->thirdVertex = T.thirdVertex;
 }
 
-triangle::triangle(vector<double>& firstVertex)
-{
-	this->firstVertex = firstVertex;
-	secondVertex = { 0, 1, 2 };
-	thirdVertex = { 1, 2, 3 };
-}
+triangle::triangle(point firstVertex1) : firstVertex(firstVertex1), secondVertex(0, 1, 2), thirdVertex(1, 2, 3) {}
 
 //getters
 
-vector<double> triangle::getFirstVertex()
-{
-	return firstVertex;
-}
+point triangle::getFirstVertex() { return firstVertex; }
 
-vector<double> triangle::getSecondVertex()
-{
-	return secondVertex;
-}
+point triangle::getSecondVertex() { return secondVertex; }
 
-vector<double> triangle::getThirdVertex()
-{
-	return thirdVertex;
-}
+point triangle::getThirdVertex() { return thirdVertex; }
 
 //operator overload
 
 triangle& triangle::operator++()
 {
-	this->firstVertex[0]++;
-	this->secondVertex[0]++;
-	this->thirdVertex[0]++;
+	this->firstVertex.setX(this->firstVertex.getX() + 1);
+	this->secondVertex.setX(this->secondVertex.getX() + 1);
+	this->thirdVertex.setX(this->thirdVertex.getX() + 1);
 	return *this;
 }
 
 triangle& triangle::operator++(int a)
 {
-	this->firstVertex[1]++;
-	this->secondVertex[1]++;
-	this->thirdVertex[1]++;
+	this->firstVertex.setY(this->firstVertex.getY() + 1);
+	this->secondVertex.setY(this->secondVertex.getY() + 1);
+	this->thirdVertex.setY(this->thirdVertex.getY() + 1);
 	return *this;
 }
 
-triangle& triangle::operator+=(double number)
+triangle& triangle::operator+=(double value)
 {
-	for (int i = 0; i < firstVertex.size(); i++)
-	{
-		firstVertex[i] += number;
-	}
-	for (int i = 0; i < secondVertex.size(); i++)
-	{
-		secondVertex[i] += number;
-	}
-	for (int i = 0; i < thirdVertex.size(); i++)
-	{
-		thirdVertex[i] += number;
-	}
+	this->firstVertex.setX(this->firstVertex.getX() + value);
+	this->firstVertex.setY(this->firstVertex.getY() + value);
+	this->firstVertex.setZ(this->firstVertex.getZ() + value);
+
+	this->secondVertex.setX(this->firstVertex.getX() + value);
+	this->secondVertex.setY(this->firstVertex.getY() + value);
+	this->secondVertex.setZ(this->firstVertex.getZ() + value);
+
+	this->thirdVertex.setX(this->firstVertex.getX() + value);
+	this->thirdVertex.setY(this->firstVertex.getY() + value);
+	this->thirdVertex.setZ(this->firstVertex.getZ() + value);
+
 	return *this;
 }
 
@@ -86,17 +81,17 @@ triangle& triangle::operator+=(double number)
 
 double triangle::perimetr()
 {
-	double x1 = firstVertex[0];
-	double y1 = firstVertex[1];
-	double z1 = firstVertex[2];
+	double x1 = firstVertex.getX();
+	double y1 = firstVertex.getY();
+	double z1 = firstVertex.getZ();
 	
-	double x2 = secondVertex[0];
-	double y2 = secondVertex[1];
-	double z2 = secondVertex[2];
+	double x2 = secondVertex.getX();
+	double y2 = secondVertex.getY();
+	double z2 = secondVertex.getZ();
 
-	double x3 = thirdVertex[0];
-	double y3 = thirdVertex[1];
-	double z3 = thirdVertex[2];
+	double x3 = thirdVertex.getX();
+	double y3 = thirdVertex.getY();
+	double z3 = thirdVertex.getZ();
 
 	double side1 = sqrt(pow((x1 - x2), 2) + pow((y1 - y2), 2) + pow((z1 - z2), 2));
 	double side2 = sqrt(pow((x2 - x3), 2) + pow((y2 - y3), 2) + pow((z2 - z3), 2));
@@ -108,15 +103,6 @@ double triangle::perimetr()
 
 //functions
 
-vector<double> inputVertex()
-{
-	vector<double> vertex(3);
-	cout << "x = "; cin >> vertex[0];
-	cout << "y = "; cin >> vertex[1];
-	cout << "z = "; cin >> vertex[2];
-	return vertex;
-}
-
 void largestPerimetr(triangle T1, triangle T2, triangle T3)
 {
 	double P1 = T1.perimetr();
@@ -125,30 +111,30 @@ void largestPerimetr(triangle T1, triangle T2, triangle T3)
 
 	if (P1 > P2) {
 		if (P1 > P3) {
-			cout << "T1 has the largest perimetr: " << P1 << endl;
+			std::cout << "T1 has the largest perimetr: " << P1 << std::endl;
 		}
 		else {
-			cout << "T3 has the largest perimetr: " << P3 << endl;
+			std::cout << "T3 has the largest perimetr: " << P3 << std::endl;
 		}
 	}
 	else if (P2 > P3) {
-		cout << "T2 has the largest perimetr: " << P2 << endl;
+		std::cout << "T2 has the largest perimetr: " << P2 << std::endl;
 	}
 	else {
-		cout << "T3 has the largest perimetr: " << P3 << endl;
+		std::cout << "T3 has the largest perimetr: " << P3 << std::endl;
 	}
 }
 
 void outputTriangle(triangle Triangle)
 {
-	vector<double> firstVertex = Triangle.getFirstVertex();
-	vector<double> secondVertex = Triangle.getSecondVertex();
-	vector<double> thirdVertex = Triangle.getThirdVertex();
+	point firstVertex = Triangle.getFirstVertex();
+	point secondVertex = Triangle.getSecondVertex();
+	point thirdVertex = Triangle.getThirdVertex();
 	
-	cout << "First vertex:" << endl;
-	cout << "x = " << firstVertex[0] << "\ty = " << firstVertex[1] << "\tz = " << firstVertex[2] << endl;
-	cout << "Second vertex:" << endl;
-	cout << "x = " << secondVertex[0] << "\ty = " << secondVertex[1] << "\tz = " << secondVertex[2] << endl;
-	cout << "Third vertex:" << endl;
-	cout << "x = " << thirdVertex[0] << "\ty = " << thirdVertex[1] << "\tz = " << thirdVertex[2] << endl;
+	std::cout << "First vertex:" << std::endl;
+	firstVertex.printPoint();
+	std::cout << "Second vertex:" << std::endl;
+	secondVertex.printPoint();
+	std::cout << "Third vertex:" << std::endl;
+	thirdVertex.printPoint();
 }

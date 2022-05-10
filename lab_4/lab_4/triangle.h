@@ -1,24 +1,21 @@
 #pragma once
-#include <iostream>
-#include <vector>
-#include <cmath>
-using namespace std;
+#include "point.h"
 
 class triangle
 {
 private:
-	vector<double> firstVertex;
-	vector<double> secondVertex;
-	vector<double> thirdVertex;
+	point firstVertex;
+	point secondVertex;
+	point thirdVertex;
 public:
 	triangle();
-	triangle(vector<double>&, vector<double>&, vector<double>&);
+	triangle(point, point, point);
 	triangle(const triangle&);
-	triangle(vector<double>&);
+	triangle(point);
 
-	vector<double> getFirstVertex();
-	vector<double> getSecondVertex();
-	vector<double> getThirdVertex();
+	point getFirstVertex();
+	point getSecondVertex();
+	point getThirdVertex();
 
 	triangle& operator ++();
 	triangle& operator ++(int);
@@ -27,6 +24,5 @@ public:
 	double perimetr();
 };
 
-vector<double> inputVertex();
 void largestPerimetr(triangle, triangle, triangle);
 void outputTriangle(triangle);
