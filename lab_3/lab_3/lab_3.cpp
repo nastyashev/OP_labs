@@ -13,7 +13,7 @@ int main()
 	SetConsoleOutputCP(1251);
 	
 	vector<text> textArr;
-    	inputArr(textArr);
+    inputArr(textArr);
 
 	int ind = getIndexLeastDigitPercent(textArr);
 	cout << "\nText with the least percentage of digits:" << endl;
