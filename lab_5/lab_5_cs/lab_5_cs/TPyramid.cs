@@ -16,10 +16,6 @@ namespace lab_5_cs
         public double Apopheme {set { _apopheme = value; } }
         public double BaseSide {set { _baseSide = value; } }
 
-        public void SetHeight(double height) { _height = height; }
-        public void SetApopheme(double apopheme) { _apopheme = apopheme;}
-        public void SetBaseSide(double baseSide) { _baseSide = baseSide;}
-
         public override double FindSurfaceArea()
         {
             double sideSurfaceArea = 0.5 * (4 * _baseSide) * _apopheme;

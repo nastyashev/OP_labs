@@ -14,9 +14,6 @@ namespace lab_5_cs
         public double Radius {set { _radius = value; } }
         public double Height {set { _height = value; } }
 
-        public void SetRadius(double radius) { _radius = radius; }
-        public void SetHeight(double height) { _height = height; }
-
         public override double FindSurfaceArea()
         {
             double sideSurfaceArea = 2 * Math.PI * _radius * _height;
