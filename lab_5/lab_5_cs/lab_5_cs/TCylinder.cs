@@ -11,6 +11,9 @@ namespace lab_5_cs
         private double _radius;
         private double _height;
 
+        public double Radius {set { _radius = value; } }
+        public double Height {set { _height = value; } }
+
         public void SetRadius(double radius) { _radius = radius; }
         public void SetHeight(double height) { _height = height; }
 

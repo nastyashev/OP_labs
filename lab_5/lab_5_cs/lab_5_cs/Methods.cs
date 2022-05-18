@@ -49,17 +49,17 @@ namespace lab_5_cs
                 Console.Write("Висота піраміди: ");
                 double height = double.Parse(Console.ReadLine());
                 height = CheckValue(height);
-                pyramids[i].SetHeight(height);
+                pyramids[i].Height = height;
 
                 Console.Write("Апофема: ");
                 double apopheme = double.Parse(Console.ReadLine());
                 apopheme = CheckValue(apopheme);
-                pyramids[i].SetApopheme(apopheme);
+                pyramids[i].Apopheme = apopheme;
 
                 Console.Write("Сторорна основи: ");
                 double baseSide = double.Parse(Console.ReadLine());
                 baseSide = CheckValue(baseSide);
-                pyramids[i].SetBaseSide(baseSide);
+                pyramids[i].BaseSide = baseSide;
             }
         }
 
@@ -74,12 +74,12 @@ namespace lab_5_cs
                 Console.Write("Радіус: ");
                 double radius = double.Parse(Console.ReadLine());
                 radius = CheckValue(radius);
-                cylinders[i].SetRadius(radius);
+                cylinders[i].Radius = radius;
 
                 Console.Write("Висота циліндра: ");
                 double height = double.Parse(Console.ReadLine());
                 height = CheckValue(height);
-                cylinders[i].SetHeight(height);
+                cylinders[i].Height = height;
             }
         }
 
@@ -88,6 +88,7 @@ namespace lab_5_cs
             while(value < 0)
             {
                 Console.WriteLine("Неправильно! Число має бути > 0");
+                Console.Write("Спробуйте ще раз: ");
                 value = double.Parse(Console.ReadLine());
             }
             return value;
@@ -98,6 +99,7 @@ namespace lab_5_cs
             while (value < 0)
             {
                 Console.WriteLine("Неправильно! Число має бути > 0");
+                Console.Write("Спробуйте ще раз: ");
                 value = int.Parse(Console.ReadLine());
             }
             return value;

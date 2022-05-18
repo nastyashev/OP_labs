@@ -35,7 +35,7 @@ namespace lab_5_cs
             int indP = Methods.LeastSurfaceArea(pyramids);
 
             Console.WriteLine("\nЦиліндр з найбільшим об'ємом: {0}, об'єм = {1, 0:0.000}", indC + 1, cylinders[indC].FindVolume());
-            Console.WriteLine("Піраміда з найменшою площою поверхні: {0}, площа поверхні = {1}", indP + 1, pyramids[indP].FindSurfaceArea());
+            Console.WriteLine("Піраміда з найменшою площою поверхні: {0}, площа поверхні = {1, 0:0.000}", indP + 1, pyramids[indP].FindSurfaceArea());
         }
     }
 }
