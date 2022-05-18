@@ -33,22 +33,27 @@ def check_value(value):
 
 def make_pyramids_array(pyramids, size):
     for i in range(size):
-        print(f"\n{i + 1} піраміда:")
-        pyramid = []
+        while True:
+            print(f"\n{i + 1} піраміда:")
+            pyramid = []
         
-        height = float(input("Висота піраміди: "))
-        height = check_value(height)
-        pyramid.append(height)
+            height = float(input("Висота піраміди: "))
+            height = check_value(height)
+            pyramid.append(height)
 
-        apopheme = float(input("Апофема: "))
-        apopheme = check_value(apopheme)
-        pyramid.append(apopheme)
+            apopheme = float(input("Апофема: "))
+            apopheme = check_value(apopheme)
+            pyramid.append(apopheme)
 
-        base_side = float(input("Сторорна основи: "))
-        base_side = check_value(base_side)
-        pyramid.append(base_side)
+            base_side = float(input("Сторорна основи: "))
+            base_side = check_value(base_side)
+            pyramid.append(base_side)
 
-        pyramids.append(TPyramid(pyramid))
+            pyramids.append(TPyramid(pyramid))
+            if pyramids[i].check_data() == False:
+                print("-----Некоректні дані! Спробуйте знову.-----")
+            if pyramids[i].check_data() == True:
+                break
     
     return pyramids
 

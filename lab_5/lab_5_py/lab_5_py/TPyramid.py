@@ -18,3 +18,9 @@ class TPyramid(TFigure):
 
     def find_volume(self):
         return (1/3.0) * pow(self.__base_side, 2) * self.__height
+
+    def check_data(self):
+        if pow(self.__apopheme, 2) == pow(self.__height, 2) + pow(self.__base_side/2.0, 2):
+            return True
+        else:
+            return False
