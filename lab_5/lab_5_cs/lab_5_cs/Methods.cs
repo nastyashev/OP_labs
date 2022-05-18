@@ -42,24 +42,33 @@ namespace lab_5_cs
         {         
             for (int i = 0; i < pyramids.Length; i++)
             {
-                Console.WriteLine($"\n{i + 1} піраміда:");
-                
-                pyramids[i] = new TPyramid();
+                do
+                {
+                    Console.WriteLine($"\n{i + 1} піраміда:");
 
-                Console.Write("Висота піраміди: ");
-                double height = double.Parse(Console.ReadLine());
-                height = CheckValue(height);
-                pyramids[i].Height = height;
+                    pyramids[i] = new TPyramid();
 
-                Console.Write("Апофема: ");
-                double apopheme = double.Parse(Console.ReadLine());
-                apopheme = CheckValue(apopheme);
-                pyramids[i].Apopheme = apopheme;
+                    Console.Write("Висота піраміди: ");
+                    double height = double.Parse(Console.ReadLine());
+                    height = CheckValue(height);
+                    pyramids[i].Height = height;
 
-                Console.Write("Сторорна основи: ");
-                double baseSide = double.Parse(Console.ReadLine());
-                baseSide = CheckValue(baseSide);
-                pyramids[i].BaseSide = baseSide;
+                    Console.Write("Апофема: ");
+                    double apopheme = double.Parse(Console.ReadLine());
+                    apopheme = CheckValue(apopheme);
+                    pyramids[i].Apopheme = apopheme;
+
+                    Console.Write("Сторорна основи: ");
+                    double baseSide = double.Parse(Console.ReadLine());
+                    baseSide = CheckValue(baseSide);
+                    pyramids[i].BaseSide = baseSide;
+
+                    if (!pyramids[i].CheckData())
+                    {
+                        Console.WriteLine("-----Некоректні дані! Спробуйте знову.-----");
+                    }
+                }
+                while (!pyramids[i].CheckData());
             }
         }
 

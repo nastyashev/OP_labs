@@ -27,5 +27,14 @@ namespace lab_5_cs
         {
             return (1 / 3.0) * Math.Pow(_baseSide, 2) * _height;
         }
+
+        public bool CheckData()
+        {
+            if (Math.Pow(_apopheme, 2) == Math.Pow(_height, 2) + Math.Pow(_baseSide/2.0, 2))
+            {
+                return true;
+            }
+            else { return false; }
+        }
     }
 }
