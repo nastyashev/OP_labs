@@ -25,12 +25,6 @@ def check_value(value):
         value = float(input("Спробуйте ще раз: "))
     return value
 
-def check_value(value):
-    while value < 0:
-        print("Неправильно! Число має бути > 0")
-        value = int(input("Спробуйте ще раз: "))
-    return value
-
 def make_pyramids_array(pyramids, size):
     for i in range(size):
         while True:

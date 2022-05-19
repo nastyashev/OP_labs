@@ -9,10 +9,7 @@ namespace lab_5_cs
     class TCylinder : TFigure
     {
         private double _radius;
-        private double _height;
-
         public double Radius {set { _radius = value; } }
-        public double Height {set { _height = value; } }
 
         public override double FindSurfaceArea()
         {

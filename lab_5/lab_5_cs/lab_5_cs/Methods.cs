@@ -102,16 +102,5 @@ namespace lab_5_cs
             }
             return value;
         }
-
-        public static int CheckValue(int value)
-        {
-            while (value < 0)
-            {
-                Console.WriteLine("Неправильно! Число має бути > 0");
-                Console.Write("Спробуйте ще раз: ");
-                value = int.Parse(Console.ReadLine());
-            }
-            return value;
-        }
     }
 }

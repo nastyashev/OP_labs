@@ -19,7 +19,7 @@ namespace lab_5_cs
         {
             Console.Write("Кількість пірамід: ");
             int n = int.Parse(Console.ReadLine());
-            n = Methods.CheckValue(n);
+            n = (int)Methods.CheckValue(n);
             TPyramid[] pyramids = new TPyramid[n];
             Methods.MakePyramidsArray(pyramids);
             
@@ -27,15 +27,15 @@ namespace lab_5_cs
             
             Console.Write("Кількість циліндрів: ");
             int m = int.Parse(Console.ReadLine());
-            m = Methods.CheckValue(m);
+            m = (int)Methods.CheckValue(m);
             TCylinder[] cylinders = new TCylinder[m];
             Methods.MakeCylinderArray(cylinders);
 
             int indC = Methods.BiggestVolume(cylinders);
             int indP = Methods.LeastSurfaceArea(pyramids);
 
-            Console.WriteLine("\nЦиліндр з найбільшим об'ємом: {0}, об'єм = {1, 0:0.000}", indC + 1, cylinders[indC].FindVolume());
-            Console.WriteLine("Піраміда з найменшою площою поверхні: {0}, площа поверхні = {1, 0:0.000}", indP + 1, pyramids[indP].FindSurfaceArea());
+            Console.WriteLine("\nЦиліндр з найбільшим об'ємом: {0}, об'єм = {1, 0:0.###}", indC + 1, cylinders[indC].FindVolume());
+            Console.WriteLine("Піраміда з найменшою площою поверхні: {0}, площа поверхні = {1, 0:0.###}", indP + 1, pyramids[indP].FindSurfaceArea());
         }
     }
 }

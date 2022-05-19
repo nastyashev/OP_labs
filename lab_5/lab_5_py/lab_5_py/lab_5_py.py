@@ -5,14 +5,14 @@
 from methods import *
 
 n = int(input("Кількість пірамід: "))
-n = check_value(n)
+n = int(check_value(n))
 pyramids = []
 pyramids = make_pyramids_array(pyramids, n)
 
 print("------------------------")
 
 m = int(input("Кількість циліндрів: "))
-m = check_value(m)
+m = int(check_value(m))
 cylinders = []
 cylinders = make_cylinder_array(cylinders, m)
 

@@ -8,11 +8,8 @@ namespace lab_5_cs
 {
     class TPyramid : TFigure
     {
-        private double _height;
         private double _apopheme;
         private double _baseSide;
-
-        public double Height {set { _height = value; } }
         public double Apopheme {set { _apopheme = value; } }
         public double BaseSide {set { _baseSide = value; } }
 
