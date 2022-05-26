@@ -15,7 +15,7 @@ namespace lab_5_cs
         {
             double sideSurfaceArea = 2 * Math.PI * _radius * _height;
             double baseArea = Math.PI * Math.Pow(_radius, 2);
-            return sideSurfaceArea + baseArea;
+            return sideSurfaceArea + 2 * baseArea;
         }
 
         public override double FindVolume()
