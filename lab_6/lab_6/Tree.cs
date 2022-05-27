@@ -68,7 +68,7 @@ namespace lab_6
             return SumElements(Root) / CountElements(Root);
         }
 
-        private void Print(TNode node, string indent = "", string side = "")
+        private void Print(TNode node, string indent = "", string side = "+")
         {
             if (node == null) return;
             
