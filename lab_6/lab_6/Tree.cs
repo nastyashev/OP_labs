@@ -68,14 +68,24 @@ namespace lab_6
             return SumElements(Root) / CountElements(Root);
         }
 
-        /*private void Print()
+        private void Print(TNode node, string indent = "", Side? side = null)
         {
+            if (node == null) return;
+            
+            if (node != null)
+            {
+                var nodeSide = side == null ? "+" : side == Side.Left ? "L" : "R";
+                Console.WriteLine($"{indent} [{nodeSide}] {node.Number}");
+                indent += new string(' ', 3);
 
+                Print(node.Left, indent, Side.Left);
+                Print(node.Right, indent, Side.Right);
+            }
         }
 
         public void Print()
         {
-
-        }*/
+            Print(Root);
+        }
     }
 }

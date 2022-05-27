@@ -31,8 +31,8 @@ namespace lab_6
             }
 
             Console.WriteLine("\nСереднє арифметичне усіх елементів дерева = {0, 0:0.###}", tree.ArithmeticMean());
-            //Console.WriteLine("Дерево:");
-            //tree.Print(Console.WindowWidth / 2, 0, tree.Root);
+            Console.WriteLine("Дерево:");
+            tree.Print();
 
             Console.ReadKey();
         }
