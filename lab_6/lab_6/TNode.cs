@@ -5,13 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace lab_6
-{
-    public enum Side
-    {
-        Left,
-        Right
-    }
-
+{ 
     internal class TNode
     {
         public TNode(double number)

@@ -68,18 +68,17 @@ namespace lab_6
             return SumElements(Root) / CountElements(Root);
         }
 
-        private void Print(TNode node, string indent = "", Side? side = null)
+        private void Print(TNode node, string indent = "", string side = "")
         {
             if (node == null) return;
             
             if (node != null)
             {
-                var nodeSide = side == null ? "+" : side == Side.Left ? "L" : "R";
-                Console.WriteLine($"{indent} [{nodeSide}] {node.Number}");
+                Console.WriteLine($"{indent} [{side}] {node.Number}");
                 indent += new string(' ', 3);
 
-                Print(node.Left, indent, Side.Left);
-                Print(node.Right, indent, Side.Right);
+                Print(node.Left, indent, "L");
+                Print(node.Right, indent, "R");
             }
         }
 
