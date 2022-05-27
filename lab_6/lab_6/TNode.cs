@@ -8,17 +8,15 @@ namespace lab_6
 {
     internal class TNode
     {
-        public TNode(double number, TNode parent = null)
+        public TNode(double number)
         {
             Number = number;
             Left = null;
             Right = null;
-            Parent = parent;
         }
 
         public double Number { get; set; }
         public TNode Left { get; set; }
         public TNode Right { get; set; }
-        public TNode Parent { get; set; }
     }
 }

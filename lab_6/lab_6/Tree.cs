@@ -8,45 +8,27 @@ namespace lab_6
 {
     internal class Tree
     {
+        public Tree() { Root = null; }
+        
         public TNode Root { get; set; }
 
-        public Tree() { Root = null; }
-
-        public void Add(double numder)
+        private static TNode Add(double number, TNode node)
         {
-            if (Root == null)
-            {
-                Root = new TNode(numder);
-            }
-            
+            if (node == null)
+                return new TNode(number);
             else
             {
-                TNode node = Root;
-                while (true)
-                {
-                    if (numder < node.Number)
-                    {
-                        if (node.Left != null)
-                            node = node.Left;
-                        else
-                        {
-                            node.Left = new TNode(numder, node);
-                            break;
-                        }
-                    }
-
-                    else
-                    {
-                        if (node.Right != null)
-                            node = node.Right;
-                        else
-                        {
-                            node.Right = new TNode(numder, node);
-                            break;
-                        }
-                    }
-                }
+                if (number < node.Number)
+                    node.Left = Add(number, node.Left);
+                else
+                    node.Right = Add(number, node.Right);
             }
+            return node;
+        }
+
+        public void Add(double number)
+        {
+            Root = Add(number, Root);
         }
 
         private int CountElements(TNode root)
@@ -86,17 +68,14 @@ namespace lab_6
             return SumElements(Root) / CountElements(Root);
         }
 
-        public void Print(int x, int y, TNode root, int delta = 0)
+        /*private void Print()
         {
-            if (root != null)
-            {
-                if (delta == 0)
-                    delta = x / 2;
-                Console.SetCursorPosition(x, y);
-                Console.Write(root.Number);
-                Print(x - delta, y + 3, root.Left, delta / 2);
-                Print(x + delta, y + 3, root.Right, delta / 2);
-            }
+
         }
+
+        public void Print()
+        {
+
+        }*/
     }
 }
