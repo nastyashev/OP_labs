@@ -12,7 +12,7 @@ namespace lab_6
         
         public TNode Root { get; set; }
 
-        private static TNode Add(double number, TNode node)
+        private TNode Add(double number, TNode node)
         {
             if (node == null)
                 return new TNode(number);
@@ -20,7 +20,7 @@ namespace lab_6
             {
                 if (number < node.Number)
                     node.Left = Add(number, node.Left);
-                else
+                if (number > node.Number)
                     node.Right = Add(number, node.Right);
             }
             return node;
